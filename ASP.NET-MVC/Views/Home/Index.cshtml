@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Index</title>
+	<style>
+		li { display:inline-block; width:120px; }
+	</style>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+	<script src="~/Scripts/Paradasc/paradasc.js"></script>
+	<script>
+		var para = new Paradasc();
+
+		$(function () {
+			var sp_mem_add = "@Html.Raw(Paradasc.Security.Encrypt("mem_add"))";
+			var sp_mem_get_tbl = "@Html.Raw(Paradasc.Security.Encrypt("mem_get_tbl"))";
+
+			var builder = "";
+			var result = para.getSpResultAsInt(sp_mem_add, { name: 'Daniel', phone: '714-212-0000' });
+
+			var data = para.getSpResultAsJson(sp_mem_get_tbl);
+
+			if (data == null)
+				return;
+
+			for (var i = 0, ln = data.length; i < ln; i++) {
+				builder += "<ul><li>" + data[i].id + "</li><li>" + data[i].name + "</li><li>" + data[i].phone + "</li></ul>"
+			}
+
+			$("#board").append(builder);
+		});
+	</script>
+</head>
+<body>
+	<form id="__ajaxAntiForgeryForm" action="#" method="post">@Html.AntiForgeryToken()</form>
+	<div id="board"></div>
+</body>
+</html>
