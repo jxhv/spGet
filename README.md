@@ -6,29 +6,29 @@ No more Model, No more Entity Framework. Just call your stored procedures from J
 You can call stored procedure from your JavaScript without any model, controller, and route.
 
 ##Ready to Use
-There are five simple steps to ready
+There are three simple steps to ready
 
 ###1. Define your database connection
 Web.config
 ```html
-	<connectionStrings>
-		<add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Demo.mdf;Initial Catalog=aspnet-WebApplication2-20160213110200;Integrated Security=True"
-		  providerName="System.Data.SqlClient" />
-	</connectionStrings>
+<connectionStrings>
+	<add name="DefaultConnection" connectionString="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Demo.mdf;Initial Catalog=aspnet-WebApplication2-20160213110200;Integrated Security=True"
+	  providerName="System.Data.SqlClient" />
+</connectionStrings>
 ```
-###2. Place ParaScript folder into your Scripts folder
+###2. Copy files
 
-###3. Place ParaModel folder into your Models folder
-
-###4. Place ParadascController.cs into your Controllers folder
+#####1)Place ParaScript folder into your Scripts folder
+#####2)Place ParaModel folder into your Models folder
+#####3)Place ParadascController.cs into your Controllers folder
 
 ###5. Add a MapRoute for Paradasc into your RouteConfig.cs
 ```C#
-         routes.MapRoute(
-             name: "Paradasc",
-             url: "Paradasc/{action}",
-             defaults: new { controller = "Paradasc", action = "" }
-         );
+ routes.MapRoute(
+     name: "Paradasc",
+     url: "Paradasc/{action}",
+     defaults: new { controller = "Paradasc", action = "" }
+ );
 ```
 
 ##Write an Application
@@ -75,9 +75,22 @@ Web.config
 
 ##Methods
 ```javascript
-getSpResultAsJson: Get returns from SP as Json table(s) 
-getSpResultAsStr: Get returns from SP as string via OUTPUT parameter
-getSpResultAsInt: Get returns from SP as integer via RETURN
+getSpResultAsJson(sp_name, param): Get returns from SP as Json table(s) 
+getSpResultAsStr(sp_name, param): Get returns from SP as string via OUTPUT parameter
+getSpResultAsInt(sp_name, param): Get returns from SP as integer via RETURN
+```
+param is json type parameter object. The structure of parameter is the same with the structure of stored procedure parameter
+
+You don't need to care about the type of each parameter. JavaScript data types will be automatically converted to the SQL data types.
+Now this version of Paradasc supports automatic type conversion as follow.
+
+```javascript
+JavasSript Type     <=>     SQL Type
+----------------------------------------------------------------
+string                      char, varchar, nchar, nvarchar, text, (datetime)
+integer                     int, (smallint, tinyint)
+decimal                     float, real, numeric, decimal
+bool                        bit
 ```
 
 ##License
