@@ -79,7 +79,7 @@ getSpResultAsJson(sp_name, param): Get returns from SP as Json table(s)
 getSpResultAsStr(sp_name, param): Get returns from SP as string via OUTPUT parameter
 getSpResultAsInt(sp_name, param): Get returns from SP as integer via RETURN
 ```
-param is json type parameter object. The structure of parameter is the same with the structure of stored procedure parameter
+params are json type parameter object. The structure of parameter is the same with the structure of stored procedure parameter
 
 You don't need to care about the type of each parameter. JavaScript data types will be automatically converted to the SQL data types.
 Now this version of Paradasc supports automatic type conversion as follow.
