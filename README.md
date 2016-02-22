@@ -18,9 +18,9 @@ Web.config
 ```
 ###2. Copy files
 
-#####1)Place ParaScript folder into your Scripts folder
-#####2)Place ParaModel folder into your Models folder
-#####3)Place ParadascController.cs into your Controllers folder
+#####1) Place ParaScript folder into your Scripts folder
+#####2) Place ParaModel folder into your Models folder
+#####3) Place ParadascController.cs into your Controllers folder
 
 ###5. Add a MapRoute for Paradasc into your RouteConfig.cs
 ```C#
