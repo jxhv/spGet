@@ -98,7 +98,8 @@
       <DependentUpon>Demo.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\Paradasc\paradasc.js" />
+    <Content Include="Scripts\ParaScript\paradasc.js" />
+    <Content Include="Scripts\demo.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -108,14 +109,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Paradasc\DB.cs" />
-    <Compile Include="Models\Paradasc\Security.cs" />
+    <Compile Include="Models\ParaModel\DB.cs" />
+    <Compile Include="Models\ParaModel\Security.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\web.config" />
+    <Content Include="Views\Home\Index2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

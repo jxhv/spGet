@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Paradasc v0.7 Stored Procedure to Script Model Framework
+ * Sources, Docs, and License: https://github.com/jxhv/paradasc/
+ * MIT licensed
+ * (c) 2015-2016 Daniel Yu (jxhv@live.com)
+*/
+ 
+using System;
 using System.Web.Mvc;
 using System.Reflection;
 using Newtonsoft.Json;
@@ -14,7 +21,7 @@ namespace Paradasc
       [ValidateInput(false)]
       public JsonResult dbGetResultAsJson(string spName, string jsonParam, string logging = null)
       {
-         spName = Security.Decrypt(spName);
+         spName = spName.Substring(0, 1) == "#" ? Security.Decrypt(spName) : spName;
 
          List<object> result = new List<object>();
 
@@ -49,7 +56,7 @@ namespace Paradasc
       [ValidateInput(false)]
       public ContentResult dbGetResultAsStr(string spName, string jsonParam, string logging = null)
       {
-         spName = Security.Decrypt(spName);
+         spName = spName.Substring(0, 1) == "#" ? Security.Decrypt(spName) : spName;
 
          try {
             Dictionary<string, object> param = get_param(jsonParam);
@@ -71,7 +78,7 @@ namespace Paradasc
       [ValidateInput(false)]
       public JsonResult dbGetResultAsInt(string spName, string jsonParam, string logging = null)
       {
-         spName = Security.Decrypt(spName);
+         spName = spName.Substring(0, 1) == "#" ? Security.Decrypt(spName) : spName;
 
          try {
             Dictionary<string, object> param = get_param(jsonParam);

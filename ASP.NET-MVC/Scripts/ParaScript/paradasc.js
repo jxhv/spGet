@@ -1,6 +1,7 @@
 ﻿/*
  * Paradasc v0.7 Stored Procedure to Script Model Framework
- * Sources, Docs, and License: http://www.jeremisoft.com/
+ * Sources, Docs, and License: https://github.com/jxhv/paradasc/
+ * MIT licensed
  * (c) 2015-2016 Daniel Yu (jxhv@live.com)
  */
 

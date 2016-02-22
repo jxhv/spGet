@@ -1,4 +1,11 @@
-﻿using System;
+﻿/*
+ * Paradasc v0.7 Stored Procedure to Script Model Framework
+ * Sources, Docs, and License: https://github.com/jxhv/paradasc/
+ * MIT licensed
+ * (c) 2015-2016 Daniel Yu (jxhv@live.com)
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -19,7 +26,7 @@ namespace Paradasc
             var input = Encoding.Unicode.GetBytes(value);
             var result = ct.TransformFinalBlock(input, 0, input.Length);
 
-            return Convert.ToBase64String(result);
+            return "#" + Convert.ToBase64String(result);
          } catch {
             return string.Empty;
          }
@@ -28,6 +35,7 @@ namespace Paradasc
       public static string Decrypt(string value)
       {
          try {
+            value = value.Substring(1);
             var source = Convert.FromBase64String(value);
             var des = get_DESAlgorithm();
             var ct = des.CreateDecryptor();

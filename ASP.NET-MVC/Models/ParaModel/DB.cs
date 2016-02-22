@@ -1,4 +1,11 @@
-﻿using System.Data.SqlClient;
+﻿/*
+ * Paradasc v0.7 Stored Procedure to Script Model Framework
+ * Sources, Docs, and License: https://github.com/jxhv/paradasc/
+ * MIT licensed
+ * (c) 2015-2016 Daniel Yu (jxhv@live.com)
+ */
+
+using System.Data.SqlClient;
 using System.Data;
 using System.Collections.Generic;
 
