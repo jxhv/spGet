@@ -4,25 +4,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <title>Paradasc - StordProcedure to Script Framework</title>
+   <title>SpGet - StordProcedure to Script Framework</title>
 	<style>
 		* { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
 		ul { margin:0; padding:0; }
 		li { display:inline-block; width:120px; border-bottom:1px solid #808080; padding:7px; }
 	</style>
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
-	<script src="~/Scripts/ParaScript/paradasc.js"></script>
+	<script src="~/Scripts/spGetScript/spGet.js"></script>
 	<script src="~/Scripts/demo.js"></script>
 	<script>
 		// names of stored procedures
 		// if you want to hide stored procedure names...
-		var sp_mem_add = "@Html.Raw(Paradasc.Security.Encrypt("mem_add"))";
-		var sp_mem_del = "@Html.Raw(Paradasc.Security.Encrypt("mem_del"))";
-		var sp_mem_set = "@Html.Raw(Paradasc.Security.Encrypt("mem_set"))";
-		var sp_mem_get_tbl = "@Html.Raw(Paradasc.Security.Encrypt("mem_get_tbl"))";
-		var sp_mem_get_phone = "@Html.Raw(Paradasc.Security.Encrypt("mem_get_phone"))";
+		var sp_mem_add = "@Html.Raw(SpGet.Security.Encrypt("mem_add"))";
+		var sp_mem_del = "@Html.Raw(SpGet.Security.Encrypt("mem_del"))";
+		var sp_mem_set = "@Html.Raw(SpGet.Security.Encrypt("mem_set"))";
+		var sp_mem_get_tbl = "@Html.Raw(SpGet.Security.Encrypt("mem_get_tbl"))";
+		var sp_mem_get_phone = "@Html.Raw(SpGet.Security.Encrypt("mem_get_phone"))";
 
-		var para = new Paradasc();
+		var spGet = new SpGet();
 		var demo = new Demo();
 
 		$(function () {

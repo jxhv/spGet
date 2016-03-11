@@ -1,5 +1,5 @@
 ﻿/*
- * Paradasc v1.0 Stored Procedure to Script Model Framework
+ * SpGet v1.0 Stored Procedure to Script Model Framework
  * Sources, Docs, and License: https://github.com/jxhv/paradasc/
  * MIT licensed
  * (c) 2015-2016 Daniel Yu (jxhv@live.com)
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Paradasc
+namespace SpGet
 {
    public class Security
    {

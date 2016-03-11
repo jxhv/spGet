@@ -1,5 +1,5 @@
 ﻿/*
- * Paradasc v1.0 Stored Procedure to Script Model Framework
+ * SpGet v1.0 Stored Procedure to Script Model Framework
  * Sources, Docs, and License: https://github.com/jxhv/paradasc/
  * MIT licensed
  * (c) 2015-2016 Daniel Yu (jxhv@live.com)
@@ -21,7 +21,7 @@ String.prototype.format = function() {
 /* === Helper Object ======================================================== */
 /* ========================================================================== */
 
-function Paradasc() {
+function SpGet() {
 	this.isEmpty = function(val) {
 		return (typeof (val) == "undefined") || (val == null);
 	};
@@ -66,7 +66,7 @@ function Paradasc() {
 			if (debugError) {
 				$(window).html(
 					"<h1>%s</h1><h1> AJAX CALL ERROR from : %s</h1><h3> Parameters: %s</h3><hr />%s"
-					.format("Paradasc", method, JSON.stringify(param), jqXHR.responseText)
+					.format("SpGet", method, JSON.stringify(param), jqXHR.responseText)
 				);
 			}
 			else {
@@ -77,24 +77,24 @@ function Paradasc() {
 		return result;
 	};
 
-	this.getSpResultAsJson = function (sp, params, log) {
+	this.AsJson = function (sp, params, log) {
 		log = this.isEmpty(log) ? null : log;
 		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
-		var result = this.ajaxCallCore("json", "/Paradasc/dbGetResultAsJson", param, "POST", true);
+		var result = this.ajaxCallCore("json", "/SpGet/dbGetResultAsJson", param, "POST", true);
 		return result;
 	}
 
-	this.getSpResultAsStr = function (sp, params, log) {
+	this.AsStr = function (sp, params, log) {
 		log = this.isEmpty(log) ? null : log;
 		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
-		var result = this.ajaxCallCore("text", "/Paradasc/dbGetResultAsStr", param, "POST", true);
+		var result = this.ajaxCallCore("text", "/SpGet/dbGetResultAsStr", param, "POST", true);
 		return this.getSafeStr(result);
 	}
 
-	this.getSpResultAsInt = function (sp, params, log) {
+	this.AsInt = function (sp, params, log) {
 		log = this.isEmpty(log) ? null : log;
 		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
-		var result = this.ajaxCallCore("json", "/Paradasc/dbGetResultAsInt", param, "POST", true);
+		var result = this.ajaxCallCore("json", "/SpGet/dbGetResultAsInt", param, "POST", true);
 		return this.getSafeInt(result);
 	}
 

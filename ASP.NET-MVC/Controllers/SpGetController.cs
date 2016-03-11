@@ -1,5 +1,5 @@
 ﻿/*
- * Paradasc v1.0 Stored Procedure to Script Model Framework
+ * SpGet v1.0 Stored Procedure to Script Model Framework
  * Sources, Docs, and License: https://github.com/jxhv/paradasc/
  * MIT licensed
  * (c) 2015-2016 Daniel Yu (jxhv@live.com)
@@ -12,9 +12,9 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
-namespace Paradasc
+namespace SpGet
 {
-   public class ParadascController : Controller
+   public class SpGetController : Controller
    {
       [AcceptVerbs(HttpVerbs.Get | HttpVerbs.Post)]
       [ValidateAntiForgeryToken]

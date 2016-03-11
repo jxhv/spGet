@@ -23,23 +23,23 @@ Demo.prototype.init = function () {
 };
 
 Demo.prototype.addRecord = function () {
-	para.getSpResultAsInt(sp_mem_add, { name: 'Daniel', phone: '714-225-1009' });
-	para.getSpResultAsInt(sp_mem_add, { name: 'Gloria', phone: '408-436-2008' });
-	para.getSpResultAsInt(sp_mem_add, { name: 'Jeremi', phone: '640-747-3007' });
-	this.lastId = para.getSpResultAsInt(sp_mem_add, { name: 'Gianna', phone: '712-858-4006' });
+	spGet.AsInt(sp_mem_add, { name: 'Daniel', phone: '714-225-1009' });
+	spGet.AsInt(sp_mem_add, { name: 'Gloria', phone: '408-436-2008' });
+	spGet.AsInt(sp_mem_add, { name: 'Jeremi', phone: '640-747-3007' });
+	this.lastId = spGet.AsInt(sp_mem_add, { name: 'Gianna', phone: '712-858-4006' });
 };
 
 Demo.prototype.delRecord = function () {
-	para.getSpResultAsInt(sp_mem_del, { name: 'Daniel' });
-	para.getSpResultAsInt(sp_mem_del, { name: 'Gloria' });
-	para.getSpResultAsInt(sp_mem_del, { name: 'Jeremi' });
-	para.getSpResultAsInt(sp_mem_del, { name: 'Gianna' });
+	spGet.AsInt(sp_mem_del, { name: 'Daniel' });
+	spGet.AsInt(sp_mem_del, { name: 'Gloria' });
+	spGet.AsInt(sp_mem_del, { name: 'Jeremi' });
+	spGet.AsInt(sp_mem_del, { name: 'Gianna' });
 };
 
 Demo.prototype.getList = function () {
 	var builder = "";
 
-	var data = para.getSpResultAsJson(sp_mem_get_tbl);
+	var data = spGet.AsJson(sp_mem_get_tbl);
 
 	if (data != null) {
 		for (var i = 0, ln = data.length; i < ln; i++) {
@@ -51,7 +51,7 @@ Demo.prototype.getList = function () {
 };
 
 Demo.prototype.getData = function () {
-	var phone = para.getSpResultAsStr(sp_mem_get_phone, { name: "Gianna" });
+	var phone = spGet.AsStr(sp_mem_get_phone, { name: "Gianna" });
 	$("#phone").html(phone);
 };
 
@@ -61,7 +61,7 @@ Demo.prototype.setData = function (phoneNum) {
 		name: 'Gianna',
 		phone: phoneNum
 	};
-	para.getSpResultAsInt(sp_mem_set, param);
+	spGet.AsInt(sp_mem_set, param);
 };
 
 Demo.prototype.delayrun = function (function_module) {

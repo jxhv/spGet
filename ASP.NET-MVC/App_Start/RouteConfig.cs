@@ -1,5 +1,5 @@
 ﻿/*
- * Paradasc v1.0 Stored Procedure to Script Model Framework
+ * SpGet v1.0 Stored Procedure to Script Model Framework
  * Sources, Docs, and License: https://github.com/jxhv/paradasc/
  * MIT licensed
  * (c) 2015-2016 Daniel Yu (jxhv@live.com)
@@ -21,9 +21,9 @@ namespace Demo
          routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
          routes.MapRoute(
-             name: "Paradasc",
-             url: "Paradasc/{action}",
-             defaults: new { controller = "Paradasc", action = "" }
+             name: "SpGet",
+             url: "SpGet/{action}",
+             defaults: new { controller = "SpGet", action = "" }
          );
 
          routes.MapRoute(

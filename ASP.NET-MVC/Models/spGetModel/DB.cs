@@ -1,5 +1,5 @@
 ﻿/*
- * Paradasc v1.0 Stored Procedure to Script Model Framework
+ * SpGet v1.0 Stored Procedure to Script Model Framework
  * Sources, Docs, and License: https://github.com/jxhv/paradasc/
  * MIT licensed
  * (c) 2015-2016 Daniel Yu (jxhv@live.com)
@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Collections.Generic;
 
-namespace Paradasc
+namespace SpGet
 {
    using System;
    using System.Configuration;

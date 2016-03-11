@@ -98,19 +98,19 @@
       <DependentUpon>Demo.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\ParaScript\paradasc.js" />
+    <Content Include="Scripts\spGetScript\SpGet.js" />
     <Content Include="Scripts\demo.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ParadascController.cs" />
+    <Compile Include="Controllers\SpGetController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ParaModel\DB.cs" />
-    <Compile Include="Models\ParaModel\Security.cs" />
+    <Compile Include="Models\spGetModel\DB.cs" />
+    <Compile Include="Models\spGetModel\Security.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
