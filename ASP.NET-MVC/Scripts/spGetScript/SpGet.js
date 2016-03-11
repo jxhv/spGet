@@ -1,6 +1,6 @@
 ﻿/*
  * SpGet v1.0 Stored Procedure to Script Model Framework
- * Sources, Docs, and License: https://github.com/jxhv/paradasc/
+ * Sources, Docs, and License: https://github.com/jxhv/spGet/
  * MIT licensed
  * (c) 2015-2016 Daniel Yu (jxhv@live.com)
  */
@@ -77,21 +77,21 @@ function SpGet() {
 		return result;
 	};
 
-	this.AsJson = function (sp, params, log) {
+	this.getAsJson = function (sp, params, log) {
 		log = this.isEmpty(log) ? null : log;
 		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
 		var result = this.ajaxCallCore("json", "/SpGet/dbGetResultAsJson", param, "POST", true);
 		return result;
 	}
 
-	this.AsStr = function (sp, params, log) {
+	this.getAsStr = function (sp, params, log) {
 		log = this.isEmpty(log) ? null : log;
 		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
 		var result = this.ajaxCallCore("text", "/SpGet/dbGetResultAsStr", param, "POST", true);
 		return this.getSafeStr(result);
 	}
 
-	this.AsInt = function (sp, params, log) {
+	this.getAsInt = function (sp, params, log) {
 		log = this.isEmpty(log) ? null : log;
 		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
 		var result = this.ajaxCallCore("json", "/SpGet/dbGetResultAsInt", param, "POST", true);
