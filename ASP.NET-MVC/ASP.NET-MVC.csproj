@@ -100,7 +100,7 @@
       <DependentUpon>DemoMVC.mdf</DependentUpon>
     </Content>
     <Content Include="Global.asax" />
-    <Content Include="Scripts\spGetScript\SpGet.js" />
+    <Content Include="Scripts\spGet\SpGet.js" />
     <Content Include="Scripts\demo.js" />
     <Content Include="Web.config" />
   </ItemGroup>
