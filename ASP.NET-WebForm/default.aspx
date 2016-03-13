@@ -12,7 +12,7 @@
 		li { display: inline-block; width: 120px; border-bottom: 1px solid #808080; padding: 7px; }
 	</style>
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
-	<script src="Scripts/spGetScript/SpGet.js"></script>
+	<script src="Scripts/spGet/SpGet.js"></script>
 	<script src="Scripts/demo.js"></script>
 	<script>
 		// names of stored procedures

@@ -90,17 +90,17 @@ function SpGet() {
 		return result;
 	}
 
-	this.getAsStr = function (sp, params, log) {
-		log = this.isEmpty(log) ? null : log;
-		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
-		var result = this.ajaxCallCore("json", "Services/spGet.asmx/dbGetResultAsStr", param, "POST", true);
-		return this.getSafeStr(result);
-	}
-
 	this.getAsInt = function (sp, params, log) {
 		log = this.isEmpty(log) ? null : log;
 		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
 		var result = this.ajaxCallCore("json", "Services/spGet.asmx/dbGetResultAsInt", param, "POST", true);
 		return this.getSafeInt(result);
+	}
+
+	this.getAsStr = function (sp, params, log) {
+		log = this.isEmpty(log) ? null : log;
+		var param = { spName: sp, jsonParam: JSON.stringify(params), logging: log };
+		var result = this.ajaxCallCore("json", "Services/spGet.asmx/dbGetResultAsStr", param, "POST", true);
+		return this.getSafeStr(result);
 	}
 }

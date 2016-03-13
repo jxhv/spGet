@@ -10,6 +10,7 @@ Demo.prototype.init = function () {
 	this.delRecord();
 	this.addRecord();
 	this.getList();
+	this.getTypes();
 	this.getData();
 
 	$("#edPhone").val($("#phone").html());
@@ -48,6 +49,39 @@ Demo.prototype.getList = function () {
 	}
 
 	$("#board").append(builder);
+};
+
+Demo.prototype.getTypes = function () {
+	var builder = "";
+
+	var param = {
+		param1: 1234,
+		param2: "spGet Framework",
+		param3 :24.98,
+		param4 :0.9778,
+		param5 :-12.33,
+		param6 :304.05,
+		param7 :false
+	};
+
+	var data = spGet.getAsJson("test", param);
+	var result = "<tr><th>int</th><th>varchar</th><th>decimal</th><th>float</th><th>real</th><th>money</th><th>bit</th></tr>";
+
+	if(data != null) {
+		var rec = data[0];
+		result += "\
+		<tr>\
+			<td>" + rec.int + "\
+			<td>" + rec.varchar + "\
+			<td>" + rec.decimal + "\
+			<td>" + rec.float + "\
+			<td>" + rec.real + "\
+			<td>" + rec.money + "\
+			<td>" + rec.bit + "\
+		</tr>";
+	}
+
+	$("#types").html(result);
 };
 
 Demo.prototype.getData = function () {

@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="spGet.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,7 +89,7 @@
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\demo.js" />
-    <Content Include="Scripts\spGetScript\SpGet.js" />
+    <Content Include="Scripts\spGet\SpGet.js" />
     <Content Include="Services\spGet.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
