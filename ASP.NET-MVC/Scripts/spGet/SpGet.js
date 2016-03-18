@@ -64,7 +64,7 @@ function SpGet() {
 			result = data;
 		}).fail(function (jqXHR, textStatus) {
 			if (debugError) {
-				$(window).html(
+				$("body").html(
 					"<h1>%s</h1><h1> AJAX CALL ERROR from : %s</h1><h3> Parameters: %s</h3><hr />%s"
 					.format("SpGet", method, JSON.stringify(param), jqXHR.responseText)
 				);

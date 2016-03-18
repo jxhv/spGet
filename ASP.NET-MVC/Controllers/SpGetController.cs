@@ -27,17 +27,18 @@ namespace SpGet
 
          try {
             Dictionary<string, object> param = get_param(jsonParam);
+				bool hasNext = true;
 
-            if (!String.IsNullOrWhiteSpace(logging))
+				if (!String.IsNullOrWhiteSpace(logging))
                logging = logging + String.Format(" | {0} : {1}", spName, jsonParam);
 
             using (SqlDataReader dr = DB.GetTable(spName, param, logging, true)) {
 
-               while (dr.HasRows) {
-                  result.Add(DB.GetJsonSerialize(dr));
-                  dr.NextResult();
-               }
-            }
+					while (hasNext) {
+						result.Add(DB.GetJsonSerialize(dr));
+						hasNext = dr.NextResult();
+					}
+				}
 
             if (result.Count == 1)
                return Json(result[0], JsonRequestBehavior.AllowGet);
